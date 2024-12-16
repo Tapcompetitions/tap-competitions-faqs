@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Section</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 10px;
+            padding: 10px 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1em;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #333;
+        }
+
+        .faq-question:hover {
+            color: #007bff; /* Blue hover */
+        }
+
+        .faq-icon {
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.6;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="faq-container">
+    <div class="faq-item">
+        <div class="faq-question">
+            What is this competition about?
+            <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+            This is a skill-based competition where the top 3 fastest participants take home a share of the $100,000 prize pool, tax-free. It's all about speed and reaction time—no randomness, just pure skill!
+        </div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">
+            How do I enter the competition?
+            <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+            Choose your Gateway (Basic, Bronze, Gold, Elite, or Ultimate), pay the entry fee, and you're in! Each Gateway determines the potential prize amount if you rank in the top 3.
+        </div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">
+            How do Gateways work, and how are winnings calculated?
+            <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+            Gateways determine the prize amount you can win if you rank in the top 3. The prize pool is distributed proportionally based on the Gateway values of the top 3 participants. 
+            <br><br>
+            **Example:**
+            <ul>
+                <li>Participant A chooses Basic Gateway ($30).</li>
+                <li>Participant B chooses Gold Gateway ($100).</li>
+                <li>Participant C chooses Ultimate Gateway ($500).</li>
+            </ul>
+            If these participants rank in the top 3, their winnings are distributed based on their Gateway values:
+            <br><br>
+            - Total Gateway value of top 3 = $30 + $100 + $500 = $630.
+            <br>
+            - Participant A (Basic): ($30 ÷ $630) × $100,000 = **$4,761.90**.
+            <br>
+            - Participant B (Gold): ($100 ÷ $630) × $100,000 = **$15,873.02**.
+            <br>
+            - Participant C (Ultimate): ($500 ÷ $630) × $100,000 = **$79,365.08**.
+            <br><br>
+            The more valuable your Gateway, the larger your potential winnings!
+        </div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">
+            Can I purchase more than one Gateway?
+            <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+            Yes! You can purchase multiple Gateways to increase your total Gateway value. The higher your total Gateway value, the greater your share of the prize pool if you rank in the top 3.
+        </div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">
+            Does everyone start at the same time?
+            <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+            Yes! All participants tap at the same time when the countdown hits zero. The winners are determined purely by reaction time, ensuring fairness for everyone.
+        </div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">
+            What should I do to prepare for the competition?
+            <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+            Ensure you have a stable internet connection and a fast, responsive device. You'll receive a reminder SMS a day before the competition and the live link on competition day.
+        </div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">
+            Are the winnings tax-free?
+            <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+            Yes! The $100,000 prize pool is completely tax-free for all winners.
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('open');
+                const icon = item.querySelector('.faq-icon');
+                icon.textContent = item.classList.contains('open') ? '-' : '+';
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
